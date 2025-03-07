@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "new_delhi",
+                "2": "mahatma_gandhi",
+                "3": "bengal_tiger",
+                "4": "ganges",
+                "5": "jawaharlal_nehru",
+                "6": "lotus",
+                "7": "bangalore",
+                "8": "rabindranath_tagore",
+                "9": "field_hockey",
+                "10": "punjab",
+                "11": "dr_rajendra_prasad",
+                "12": "rajasthan",
+                "13": "indian_rupee",
+                "14": "sardar_vallabhbhai_patel",
+                "15": "kerala",
+                "16": "mother_teresa",
+                "17": "arunachal_pradesh",
+                "18": "abul_kalam_azad",
+                "19": "assam",
+                "20": "abhinav_bindra"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- General Knowledge Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">General Knowledge Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. What is the capital of India?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="new_delhi">New Delhi</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="kolkata">Kolkata</option>
+                            <option value="chennai">Chennai</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Who is known as the 'Father of the Nation' in India?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mahatma_gandhi">Mahatma Gandhi</option>
+                            <option value="jawaharlal_nehru">Jawaharlal Nehru</option>
+                            <option value="subhas_chandra_bose">Subhas Chandra Bose</option>
+                            <option value="bhagat_singh">Bhagat Singh</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. What is the national animal of India?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="bengal_tiger">Bengal Tiger</option>
+                            <option value="elephant">Elephant</option>
+                            <option value="peacock">Peacock</option>
+                            <option value="lion">Lion</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Which is the longest river in India?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ganges">Ganges</option>
+                            <option value="yamuna">Yamuna</option>
+                            <option value="godavari">Godavari</option>
+                            <option value="brahmaputra">Brahmaputra</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Who was the first Prime Minister of India?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="jawaharlal_nehru">Jawaharlal Nehru</option>
+                            <option value="lal_bahadur_shastri">Lal Bahadur Shastri</option>
+                            <option value="indira_gandhi">Indira Gandhi</option>
+                            <option value="rajiv_gandhi">Rajiv Gandhi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. What is the national flower of India?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="lotus">Lotus</option>
+                            <option value="rose">Rose</option>
+                            <option value="marigold">Marigold</option>
+                            <option value="sunflower">Sunflower</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which Indian city is known as the 'Silicon Valley of India'?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="bangalore">Bangalore</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="pune">Pune</option>
+                            <option value="gurgaon">Gurgaon</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Who wrote the Indian national anthem?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="rabindranath_tagore">Rabindranath Tagore</option>
+                            <option value="bankim_chandra_chatterjee">Bankim Chandra Chatterjee</option>
+                            <option value="sarojini_naidu">Sarojini Naidu</option>
+                            <option value="subramania_bharati">Subramania Bharati</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. What is the national sport of India?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="field_hockey">Field Hockey</option>
+                            <option value="cricket">Cricket</option>
+                            <option value="kabaddi">Kabaddi</option>
+                            <option value="badminton">Badminton</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Which Indian state is known as the 'Land of Five Rivers'?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="uttar_pradesh">Uttar Pradesh</option>
+                            <option value="bihar">Bihar</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Who was the first President of India?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="dr_rajendra_prasad">Dr. Rajendra Prasad</option>
+                            <option value="dr_s_radhakrishnan">Dr. S. Radhakrishnan</option>
+                            <option value="dr_zakir_hussain">Dr. Zakir Hussain</option>
+                            <option value="dr_a_p_j_abdul_kalam">Dr. A. P. J. Abdul Kalam</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Which is the largest state in India by area?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="madhya_pradesh">Madhya Pradesh</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="uttar_pradesh">Uttar Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. What is the national currency of India?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="indian_rupee">Indian Rupee</option>
+                            <option value="dollar">Dollar</option>
+                            <option value="euro">Euro</option>
+                            <option value="pound">Pound</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Who is known as the 'Iron Man of India'?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="sardar_vallabhbhai_patel">Sardar Vallabhbhai Patel</option>
+                            <option value="subhas_chandra_bose">Subhas Chandra Bose</option>
+                            <option value="bhagat_singh">Bhagat Singh</option>
+                            <option value="lal_bahadur_shastri">Lal Bahadur Shastri</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which Indian state is known as the 'Spice Garden of India'?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="tamil_nadu">Tamil Nadu</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="andhra_pradesh">Andhra Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Who was the first Indian woman to win a Nobel Prize?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mother_teresa">Mother Teresa</option>
+                            <option value="indra_nooyi">Indra Nooyi</option>
+                            <option value="kiran_bedi">Kiran Bedi</option>
+                            <option value="kalpana_chawla">Kalpana Chawla</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Which Indian state is known as the 'Land of Rising Sun'?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="arunachal_pradesh">Arunachal Pradesh</option>
+                            <option value="assam">Assam</option>
+                            <option value="manipur">Manipur</option>
+                            <option value="nagaland">Nagaland</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Who is the author of the book 'India Wins Freedom'?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="abul_kalam_azad">Abul Kalam Azad</option>
+                            <option value="jawaharlal_nehru">Jawaharlal Nehru</option>
+                            <option value="mahatma_gandhi">Mahatma Gandhi</option>
+                            <option value="sardar_patel">Sardar Patel</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which Indian state is known as the 'Tea Garden of India'?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="assam">Assam</option>
+                            <option value="west_bengal">West Bengal</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="tamil_nadu">Tamil Nadu</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Who was the first Indian to win an individual Olympic gold medal?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="abhinav_bindra">Abhinav Bindra</option>
+                            <option value="milkha_singh">Milkha Singh</option>
+                            <option value="p_t_usha">P. T. Usha</option>
+                            <option value="sushil_kumar">Sushil Kumar</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded" onclick="calculateMarks()">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

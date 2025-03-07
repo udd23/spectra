@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "michael_jordan",
+                "2": "pele",
+                "3": "roger_federer",
+                "4": "usain_bolt",
+                "5": "muhammad_ali",
+                "6": "tiger_woods",
+                "7": "serena_williams",
+                "8": "lebron_james",
+                "9": "cristiano_ronaldo",
+                "10": "michael_phelps",
+                "11": "lionel_messi",
+                "12": "rafael_nadal",
+                "13": "wayne_gretzky",
+                "14": "jackie_robinson",
+                "15": "babe_ruth",
+                "16": "diego_maradona",
+                "17": "kobe_bryant",
+                "18": "novak_djokovic",
+                "19": "shaquille_oneal",
+                "20": "larry_bird"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Sports Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Sports Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Who is known as the greatest basketball player of all time?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="michael_jordan">Michael Jordan</option>
+                            <option value="lebron_james">LeBron James</option>
+                            <option value="kobe_bryant">Kobe Bryant</option>
+                            <option value="magic_johnson">Magic Johnson</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Who is considered the greatest football (soccer) player of all time?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pele">Pelé</option>
+                            <option value="diego_maradona">Diego Maradona</option>
+                            <option value="lionel_messi">Lionel Messi</option>
+                            <option value="cristiano_ronaldo">Cristiano Ronaldo</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. Who has won the most Grand Slam titles in tennis?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="roger_federer">Roger Federer</option>
+                            <option value="rafael_nadal">Rafael Nadal</option>
+                            <option value="novak_djokovic">Novak Djokovic</option>
+                            <option value="pete_sampras">Pete Sampras</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Who is the fastest man in the world?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="usain_bolt">Usain Bolt</option>
+                            <option value="carl_lewis">Carl Lewis</option>
+                            <option value="tyson_gay">Tyson Gay</option>
+                            <option value="justin_gatlin">Justin Gatlin</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Who is known as "The Greatest" in boxing?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="muhammad_ali">Muhammad Ali</option>
+                            <option value="mike_tyson">Mike Tyson</option>
+                            <option value="floyd_mayweather">Floyd Mayweather</option>
+                            <option value="sugar_ray_robinson">Sugar Ray Robinson</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Who is considered the greatest golfer of all time?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="tiger_woods">Tiger Woods</option>
+                            <option value="jack_nicklaus">Jack Nicklaus</option>
+                            <option value="arnold_palmer">Arnold Palmer</option>
+                            <option value="ben_hogan">Ben Hogan</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Who has won the most Grand Slam titles in women's tennis?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="serena_williams">Serena Williams</option>
+                            <option value="steffi_graf">Steffi Graf</option>
+                            <option value="martina_navratilova">Martina Navratilova</option>
+                            <option value="margaret_court">Margaret Court</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Who is known as "King James" in basketball?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="lebron_james">LeBron James</option>
+                            <option value="michael_jordan">Michael Jordan</option>
+                            <option value="kobe_bryant">Kobe Bryant</option>
+                            <option value="shaquille_oneal">Shaquille O'Neal</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Who is the all-time top scorer in the UEFA Champions League?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="cristiano_ronaldo">Cristiano Ronaldo</option>
+                            <option value="lionel_messi">Lionel Messi</option>
+                            <option value="raúl">Raúl</option>
+                            <option value="karim_benzema">Karim Benzema</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Who has won the most Olympic gold medals?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="michael_phelps">Michael Phelps</option>
+                            <option value="usain_bolt">Usain Bolt</option>
+                            <option value="carl_lewis">Carl Lewis</option>
+                            <option value="larisa_latynina">Larisa Latynina</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Who is known as "La Pulga" in football (soccer)?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="lionel_messi">Lionel Messi</option>
+                            <option value="cristiano_ronaldo">Cristiano Ronaldo</option>
+                            <option value="neymar">Neymar</option>
+                            <option value="kylian_mbappe">Kylian Mbappé</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Who is known as the "King of Clay" in tennis?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="rafael_nadal">Rafael Nadal</option>
+                            <option value="roger_federer">Roger Federer</option>
+                            <option value="novak_djokovic">Novak Djokovic</option>
+                            <option value="andy_murray">Andy Murray</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Who is considered the greatest ice hockey player of all time?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="wayne_gretzky">Wayne Gretzky</option>
+                            <option value="mario_lemieux">Mario Lemieux</option>
+                            <option value="bobby_orr">Bobby Orr</option>
+                            <option value="gordie_howe">Gordie Howe</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Who broke the color barrier in Major League Baseball?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="jackie_robinson">Jackie Robinson</option>
+                            <option value="hank_aaron">Hank Aaron</option>
+                            <option value="willie_mays">Willie Mays</option>
+                            <option value="satchel_paige">Satchel Paige</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Who is known as "The Sultan of Swat" in baseball?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="babe_ruth">Babe Ruth</option>
+                            <option value="lou_gehrig">Lou Gehrig</option>
+                            <option value="joe_dimaggio">Joe DiMaggio</option>
+                            <option value="mickey_mantle">Mickey Mantle</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Who is famous for the "Hand of God" goal in football (soccer)?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="diego_maradona">Diego Maradona</option>
+                            <option value="pele">Pelé</option>
+                            <option value="lionel_messi">Lionel Messi</option>
+                            <option value="zinedine_zidane">Zinedine Zidane</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Who is known as the "Black Mamba" in basketball?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="kobe_bryant">Kobe Bryant</option>
+                            <option value="michael_jordan">Michael Jordan</option>
+                            <option value="lebron_james">LeBron James</option>
+                            <option value="allen_iverson">Allen Iverson</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Who has won the most Australian Open titles in tennis?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="novak_djokovic">Novak Djokovic</option>
+                            <option value="roger_federer">Roger Federer</option>
+                            <option value="rafael_nadal">Rafael Nadal</option>
+                            <option value="andy_murray">Andy Murray</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Who is known as "Shaq" in basketball?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="shaquille_oneal">Shaquille O'Neal</option>
+                            <option value="kareem_abdul_jabbar">Kareem Abdul-Jabbar</option>
+                            <option value="hakeem_olajuwon">Hakeem Olajuwon</option>
+                            <option value="patrick_ewing">Patrick Ewing</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Who is known for his rivalry with Roger Federer in tennis?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="rafael_nadal">Rafael Nadal</option>
+                            <option value="novak_djokovic">Novak Djokovic</option>
+                            <option value="andy_murray">Andy Murray</option>
+                            <option value="stan_wawrinka">Stan Wawrinka</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

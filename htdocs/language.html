@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "mandarin",
+                "2": "english",
+                "3": "spanish",
+                "4": "hindi",
+                "5": "arabic",
+                "6": "portuguese",
+                "7": "bengali",
+                "8": "russian",
+                "9": "japanese",
+                "10": "punjabi",
+                "11": "german",
+                "12": "javanese",
+                "13": "korean",
+                "14": "french",
+                "15": "turkish",
+                "16": "vietnamese",
+                "17": "italian",
+                "18": "thai",
+                "19": "urdu",
+                "20": "persian"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Language Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Language Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Which language has the most native speakers in the world?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mandarin">Mandarin</option>
+                            <option value="english">English</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="hindi">Hindi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Which language is the most widely spoken language in the world?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="english">English</option>
+                            <option value="mandarin">Mandarin</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="hindi">Hindi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. Which language is the second most spoken language in the world by native speakers?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="english">English</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="arabic">Arabic</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Which language is primarily spoken in India and is one of the official languages of the country?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="telugu">Telugu</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Which language is written from right to left and is widely spoken in the Middle East and North Africa?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="arabic">Arabic</option>
+                            <option value="hebrew">Hebrew</option>
+                            <option value="persian">Persian</option>
+                            <option value="urdu">Urdu</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Which language is spoken in Brazil and is the official language of the country?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="portuguese">Portuguese</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="french">French</option>
+                            <option value="italian">Italian</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which language is spoken in Bangladesh and is one of the most spoken languages in the world?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="tamil">Tamil</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Which language is spoken in Russia and is one of the six official languages of the United Nations?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="russian">Russian</option>
+                            <option value="german">German</option>
+                            <option value="french">French</option>
+                            <option value="italian">Italian</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Which language is spoken in Japan and uses three different writing systems: Kanji, Hiragana, and Katakana?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="korean">Korean</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="thai">Thai</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Which language is spoken in the Punjab region of India and Pakistan?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="punjabi">Punjabi</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="bengali">Bengali</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Which language is spoken in Germany, Austria, and parts of Switzerland?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="german">German</option>
+                            <option value="french">French</option>
+                            <option value="italian">Italian</option>
+                            <option value="dutch">Dutch</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Which language is spoken on the island of Java in Indonesia?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="javanese">Javanese</option>
+                            <option value="indonesian">Indonesian</option>
+                            <option value="malay">Malay</option>
+                            <option value="sundanese">Sundanese</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Which language is spoken in both North and South Korea?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="korean">Korean</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="vietnamese">Vietnamese</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Which language is spoken in France and is one of the six official languages of the United Nations?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="french">French</option>
+                            <option value="german">German</option>
+                            <option value="italian">Italian</option>
+                            <option value="spanish">Spanish</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which language is spoken in Turkey and Cyprus?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="turkish">Turkish</option>
+                            <option value="greek">Greek</option>
+                            <option value="arabic">Arabic</option>
+                            <option value="persian">Persian</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Which language is spoken in Vietnam and uses the Latin alphabet with additional diacritics?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="vietnamese">Vietnamese</option>
+                            <option value="thai">Thai</option>
+                            <option value="lao">Lao</option>
+                            <option value="khmer">Khmer</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Which language is spoken in Italy and is known for its musicality and influence on classical music terminology?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="italian">Italian</option>
+                            <option value="french">French</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="portuguese">Portuguese</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Which language is spoken in Thailand and is known for its complex tonal system?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="thai">Thai</option>
+                            <option value="vietnamese">Vietnamese</option>
+                            <option value="lao">Lao</option>
+                            <option value="khmer">Khmer</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which language is spoken in Pakistan and India and uses the Perso-Arabic script?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="punjabi">Punjabi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Which language is spoken in Iran and is also known as Farsi?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="persian">Persian</option>
+                            <option value="arabic">Arabic</option>
+                            <option value="kurdish">Kurdish</option>
+                            <option value="pashto">Pashto</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

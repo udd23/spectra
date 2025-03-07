@@ -1,0 +1,298 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex flex-col h-screen">
+
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="text-green-400">Spectra</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a class="text-gray-600" href="home.php">Home</a>
+                    <a class="text-gray-600" href="contact.php">Help center</a>
+                    <a class="bg-green-600 text-white px-4 py-2 rounded" href="survey.php">+ New Survey</a>
+                    <a class="bg-blue-600 text-white px-4 py-2 rounded" href="quizz.php">+ New Quiz</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="flex flex-1 overflow-hidden">
+
+            <!-- Left Panel -->
+            <div class="w-full md:w-1/4 bg-white border-r border-gray-300 overflow-y-auto p-4">
+                <h2 class="text-lg font-semibold mb-4">Drag & Drop Questions:</h2>
+                <ul id="question-list" class="space-y-2">
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="text">
+                        <i class="fas fa-font text-blue-500"></i> <span>Text Input</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="radio">
+                        <i class="fas fa-dot-circle text-blue-500"></i> <span>Multiple Choice</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="checkbox">
+                        <i class="fas fa-check-square text-blue-500"></i> <span>Checkboxes</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="date">
+                        <i class="fas fa-calendar-alt text-blue-500"></i> <span>Date & Time</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="dropdown">
+                        <i class="fas fa-caret-down text-blue-500"></i> <span>Dropdown</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="rating">
+                        <i class="fas fa-star text-blue-500"></i> <span>Rating</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="file">
+                        <i class="fas fa-file-upload text-blue-500"></i> <span>File Upload</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="welcome">
+                        <i class="fas fa-handshake text-blue-500"></i> <span>Welcome or Section Page</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="choice">
+                        <i class="fas fa-list text-blue-500"></i> <span>Choice</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="open-ended">
+                        <i class="fas fa-pen text-blue-500"></i> <span>Open Ended</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="numeric">
+                        <i class="fas fa-sort-numeric-up text-blue-500"></i> <span>Numeric or Slider</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="multimedia">
+                        <i class="fas fa-photo-video text-blue-500"></i> <span>Multimedia or Text</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="yes-no">
+                        <i class="fas fa-check text-blue-500"></i> <span>Yes / No</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="ranking">
+                        <i class="fas fa-sort text-blue-500"></i> <span>Ranking</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="email">
+                        <i class="fas fa-envelope text-blue-500"></i> <span>Email</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="phone">
+                        <i class="fas fa-phone text-blue-500"></i> <span>Phone Number</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="address">
+                        <i class="fas fa-map-marker-alt text-blue-500"></i> <span>Address</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="comments">
+                        <i class="fas fa-comments text-blue-500"></i> <span>Comments</span>
+                    </li>
+                    <li class="draggable flex items-center space-x-2 p-2 border cursor-move bg-gray-200" draggable="true" data-type="poll">
+                        <i class="fas fa-poll text-blue-500"></i> <span>Poll</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Survey Form Area -->
+            <div class="flex-1 bg-gray-100 p-4 overflow-y-auto">
+                <div class="bg-white border border-gray-300 p-4">
+                    <div class="flex items-center justify-between bg-green-500 text-white p-2">
+                        <span>1. Untitled Page</span>
+                    </div>
+
+                    <!-- Drop Zone -->
+                    <div id="drop-zone" class="p-6 bg-gray-50 border-dashed border-2 border-gray-300 min-h-[200px] flex flex-col space-y-4 text-gray-600 text-center">
+                        Drag and drop questions here
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Drag & Drop Functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const questions = document.querySelectorAll(".draggable");
+            const dropZone = document.getElementById("drop-zone");
+
+            questions.forEach(question => {
+                question.addEventListener("dragstart", (e) => {
+                    e.dataTransfer.setData("questionType", e.target.dataset.type);
+                });
+            });
+
+            dropZone.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                dropZone.classList.add("border-green-500");
+            });
+
+            dropZone.addEventListener("dragleave", () => {
+                dropZone.classList.remove("border-green-500");
+            });
+
+            dropZone.addEventListener("drop", (e) => {
+                e.preventDefault();
+                dropZone.classList.remove("border-green-500");
+
+                const type = e.dataTransfer.getData("questionType");
+                let newQuestion = document.createElement("div");
+                newQuestion.classList.add("p-3", "border", "bg-white", "rounded", "flex", "justify-between", "items-center");
+
+                switch (type) {
+                    case "text":
+                        newQuestion.innerHTML = `
+                            <span>Text Input</span>
+                            <input type="text" placeholder="Enter your response..." class="border p-1 rounded w-1/2">
+                        `;
+                        break;
+                    case "radio":
+                        newQuestion.innerHTML = `
+                            <span>Multiple Choice</span>
+                            <div>
+                                <input type="radio" name="radio${Date.now()}"> Option 1
+                                <input type="radio" name="radio${Date.now()}"> Option 2
+                            </div>
+                        `;
+                        break;
+                    case "checkbox":
+                        newQuestion.innerHTML = `
+                            <span>Checkboxes</span>
+                            <div>
+                                <input type="checkbox"> Option 1
+                                <input type="checkbox"> Option 2
+                            </div>
+                        `;
+                        break;
+                    case "date":
+                        newQuestion.innerHTML = `
+                            <span>Date & Time</span>
+                            <input type="date" class="border p-1 rounded">
+                        `;
+                        break;
+                    case "dropdown":
+                        newQuestion.innerHTML = `
+                            <span>Dropdown</span>
+                            <select class="border p-1 rounded">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        `;
+                        break;
+                    case "rating":
+                        newQuestion.innerHTML = `
+                            <span>Rating</span>
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <i class="fas fa-star text-yellow-500"></i>
+                            </div>
+                        `;
+                        break;
+                    case "file":
+                        newQuestion.innerHTML = `
+                            <span>File Upload</span>
+                            <input type="file" class="border p-1 rounded">
+                        `;
+                        break;
+                    case "welcome":
+                        newQuestion.innerHTML = `
+                            <span>Welcome or Section Page</span>
+                            <textarea placeholder="Enter welcome message or section details..." class="border p-1 rounded w-full"></textarea>
+                        `;
+                        break;
+                    case "choice":
+                        newQuestion.innerHTML = `
+                            <span>Choice</span>
+                            <div>
+                                <input type="radio" name="choice${Date.now()}"> Option 1
+                                <input type="radio" name="choice${Date.now()}"> Option 2
+                            </div>
+                        `;
+                        break;
+                    case "open-ended":
+                        newQuestion.innerHTML = `
+                            <span>Open Ended</span>
+                            <textarea placeholder="Enter your response..." class="border p-1 rounded w-full"></textarea>
+                        `;
+                        break;
+                    case "numeric":
+                        newQuestion.innerHTML = `
+                            <span>Numeric or Slider</span>
+                            <input type="number" placeholder="Enter a number..." class="border p-1 rounded w-1/2">
+                        `;
+                        break;
+                    case "multimedia":
+                        newQuestion.innerHTML = `
+                            <span>Multimedia or Text</span>
+                            <textarea placeholder="Enter text or embed multimedia..." class="border p-1 rounded w-full"></textarea>
+                        `;
+                        break;
+                    case "yes-no":
+                        newQuestion.innerHTML = `
+                            <span>Yes / No</span>
+                            <div>
+                                <input type="radio" name="yesno${Date.now()}"> Yes
+                                <input type="radio" name="yesno${Date.now()}"> No
+                            </div>
+                        `;
+                        break;
+                    case "ranking":
+                        newQuestion.innerHTML = `
+                            <span>Ranking</span>
+                            <div>
+                                <input type="number" placeholder="Rank 1" class="border p-1 rounded w-1/4">
+                                <input type="number" placeholder="Rank 2" class="border p-1 rounded w-1/4">
+                            </div>
+                        `;
+                        break;
+                    case "email":
+                        newQuestion.innerHTML = `
+                            <span>Email</span>
+                            <input type="email" placeholder="Enter your email..." class="border p-1 rounded w-1/2">
+                        `;
+                        break;
+                    case "phone":
+                        newQuestion.innerHTML = `
+                            <span>Phone Number</span>
+                            <input type="tel" placeholder="Enter your phone number..." class="border p-1 rounded w-1/2">
+                        `;
+                        break;
+                    case "address":
+                        newQuestion.innerHTML = `
+                            <span>Address</span>
+                            <textarea placeholder="Enter your address..." class="border p-1 rounded w-full"></textarea>
+                        `;
+                        break;
+                    case "comments":
+                        newQuestion.innerHTML = `
+                            <span>Comments</span>
+                            <textarea placeholder="Enter your comments..." class="border p-1 rounded w-full"></textarea>
+                        `;
+                        break;
+                    case "poll":
+                        newQuestion.innerHTML = `
+                            <span>Poll</span>
+                            <div>
+                                <input type="radio" name="poll${Date.now()}"> Option 1
+                                <input type="radio" name="poll${Date.now()}"> Option 2
+                            </div>
+                        `;
+                        break;
+                }
+
+                // Add delete button
+                let deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = `<i class="fas fa-trash text-red-500"></i>`;
+                deleteBtn.classList.add("ml-4", "text-red-500", "cursor-pointer");
+                deleteBtn.addEventListener("click", () => newQuestion.remove());
+
+                newQuestion.appendChild(deleteBtn);
+                dropZone.appendChild(newQuestion);
+            });
+        });
+    </script>
+
+</body>
+</html>

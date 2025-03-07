@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "sushi",
+                "2": "italy",
+                "3": "tacos",
+                "4": "croissant",
+                "5": "paella",
+                "6": "poutine",
+                "7": "kimchi",
+                "8": "biryani",
+                "9": "pho",
+                "10": "hummus",
+                "11": "bratwurst",
+                "12": "dim_sum",
+                "13": "ceviche",
+                "14": "baklava",
+                "15": "moussaka",
+                "16": "tiramisu",
+                "17": "ramen",
+                "18": "sauerbraten",
+                "19": "falafel",
+                "20": "goulash"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Food Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Food Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Which dish is a traditional Japanese food consisting of vinegared rice and seafood?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="sushi">Sushi</option>
+                            <option value="ramen">Ramen</option>
+                            <option value="tempura">Tempura</option>
+                            <option value="sashimi">Sashimi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Which country is known for its pasta and pizza?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="italy">Italy</option>
+                            <option value="france">France</option>
+                            <option value="spain">Spain</option>
+                            <option value="greece">Greece</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. Which Mexican dish consists of a folded or rolled tortilla filled with various mixtures?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="tacos">Tacos</option>
+                            <option value="burritos">Burritos</option>
+                            <option value="quesadillas">Quesadillas</option>
+                            <option value="enchiladas">Enchiladas</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Which French pastry is known for its crescent shape and flaky texture?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="croissant">Croissant</option>
+                            <option value="baguette">Baguette</option>
+                            <option value="eclair">Éclair</option>
+                            <option value="macaron">Macaron</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Which Spanish dish is made with rice, saffron, and various meats or seafood?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="paella">Paella</option>
+                            <option value="tapas">Tapas</option>
+                            <option value="gazpacho">Gazpacho</option>
+                            <option value="churros">Churros</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Which Canadian dish consists of fries topped with cheese curds and gravy?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="poutine">Poutine</option>
+                            <option value="beaver_tails">Beaver Tails</option>
+                            <option value="butter_tarts">Butter Tarts</option>
+                            <option value="tourtiere">Tourtière</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which Korean dish is made from fermented vegetables, usually cabbage and radishes?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="kimchi">Kimchi</option>
+                            <option value="bibimbap">Bibimbap</option>
+                            <option value="bulgogi">Bulgogi</option>
+                            <option value="tteokbokki">Tteokbokki</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Which Indian dish is a mixed rice dish with spices, meat, and vegetables?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="biryani">Biryani</option>
+                            <option value="tandoori_chicken">Tandoori Chicken</option>
+                            <option value="butter_chicken">Butter Chicken</option>
+                            <option value="samosa">Samosa</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Which Vietnamese soup consists of broth, rice noodles, herbs, and meat?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pho">Pho</option>
+                            <option value="bun_bo_hue">Bun Bo Hue</option>
+                            <option value="banh_mi">Banh Mi</option>
+                            <option value="goi_cuon">Goi Cuon</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Which Middle Eastern dip is made from mashed chickpeas, tahini, lemon juice, and garlic?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="hummus">Hummus</option>
+                            <option value="baba_ganoush">Baba Ganoush</option>
+                            <option value="tabbouleh">Tabbouleh</option>
+                            <option value="falafel">Falafel</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Which German sausage is typically made from pork and is often grilled or fried?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="bratwurst">Bratwurst</option>
+                            <option value="knackwurst">Knackwurst</option>
+                            <option value="currywurst">Currywurst</option>
+                            <option value="weisswurst">Weisswurst</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Which Chinese dish consists of small steamed or fried savory dumplings?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="dim_sum">Dim Sum</option>
+                            <option value="spring_rolls">Spring Rolls</option>
+                            <option value="baozi">Baozi</option>
+                            <option value="wonton">Wonton</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Which Peruvian dish is made from fresh raw fish cured in citrus juices?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ceviche">Ceviche</option>
+                            <option value="lomo_saltado">Lomo Saltado</option>
+                            <option value="aji_de_gallina">Aji de Gallina</option>
+                            <option value="pachamanca">Pachamanca</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Which Middle Eastern dessert is made of layers of filo pastry filled with chopped nuts and sweetened with syrup or honey?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="baklava">Baklava</option>
+                            <option value="kunafa">Kunafa</option>
+                            <option value="maamoul">Maamoul</option>
+                            <option value="halva">Halva</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which Greek dish is made of layers of eggplant, minced meat, and béchamel sauce?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="moussaka">Moussaka</option>
+                            <option value="souvlaki">Souvlaki</option>
+                            <option value="gyros">Gyros</option>
+                            <option value="spanakopita">Spanakopita</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Which Italian dessert is made of layers of coffee-soaked ladyfingers and mascarpone cheese?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="tiramisu">Tiramisu</option>
+                            <option value="panna_cotta">Panna Cotta</option>
+                            <option value="cannoli">Cannoli</option>
+                            <option value="gelato">Gelato</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Which Japanese noodle soup consists of Chinese-style wheat noodles served in a meat or fish-based broth?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ramen">Ramen</option>
+                            <option value="udon">Udon</option>
+                            <option value="soba">Soba</option>
+                            <option value="miso_soup">Miso Soup</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Which German dish is a pot roast, usually of beef, marinated before slow-cooking?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="sauerbraten">Sauerbraten</option>
+                            <option value="schnitzel">Schnitzel</option>
+                            <option value="bratwurst">Bratwurst</option>
+                            <option value="goulash">Goulash</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which Middle Eastern dish is made of deep-fried balls of ground chickpeas or fava beans?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="falafel">Falafel</option>
+                            <option value="hummus">Hummus</option>
+                            <option value="shawarma">Shawarma</option>
+                            <option value="tabbouleh">Tabbouleh</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Which Hungarian dish is a stew of meat and vegetables, seasoned with paprika and other spices?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="goulash">Goulash</option>
+                            <option value="paprikash">Paprikash</option>
+                            <option value="pörkölt">Pörkölt</option>
+                                <option value="lecsó">Lecsó</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>   
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

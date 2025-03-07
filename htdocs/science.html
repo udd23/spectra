@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "gravity",
+                "2": "neutron",
+                "3": "mitochondria",
+                "4": "299792458",
+                "5": "h2o",
+                "6": "jupiter",
+                "7": "carbon",
+                "8": "dna",
+                "9": "isaac_newton",
+                "10": "photosynthesis",
+                "11": "proton",
+                "12": "ozone",
+                "13": "einstein",
+                "14": "helium",
+                "15": "mars",
+                "16": "chlorophyll",
+                "17": "voltage",
+                "18": "darwin",
+                "19": "pluto",
+                "20": "nucleus"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Science Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Science Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. What force keeps us on the ground?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="gravity">Gravity</option>
+                            <option value="magnetism">Magnetism</option>
+                            <option value="friction">Friction</option>
+                            <option value="tension">Tension</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. What is the neutral subatomic particle called?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="neutron">Neutron</option>
+                            <option value="proton">Proton</option>
+                            <option value="electron">Electron</option>
+                            <option value="positron">Positron</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. What is the powerhouse of the cell?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mitochondria">Mitochondria</option>
+                            <option value="nucleus">Nucleus</option>
+                            <option value="ribosome">Ribosome</option>
+                            <option value="golgi_apparatus">Golgi Apparatus</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. What is the speed of light in vacuum (in m/s)?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="299792458">299,792,458</option>
+                            <option value="150000000">150,000,000</option>
+                            <option value="300000000">300,000,000</option>
+                            <option value="299000000">299,000,000</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. What is the chemical formula for water?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="h2o">H₂O</option>
+                            <option value="co2">CO₂</option>
+                            <option value="o2">O₂</option>
+                            <option value="h2">H₂</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Which planet is the largest in our solar system?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="jupiter">Jupiter</option>
+                            <option value="saturn">Saturn</option>
+                            <option value="earth">Earth</option>
+                            <option value="neptune">Neptune</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. What element is diamond made of?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="carbon">Carbon</option>
+                            <option value="silicon">Silicon</option>
+                            <option value="oxygen">Oxygen</option>
+                            <option value="hydrogen">Hydrogen</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. What is the molecule that carries genetic information?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="dna">DNA</option>
+                            <option value="rna">RNA</option>
+                            <option value="protein">Protein</option>
+                            <option value="lipid">Lipid</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Who formulated the laws of motion?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="isaac_newton">Isaac Newton</option>
+                            <option value="albert_einstein">Albert Einstein</option>
+                            <option value="galileo_galilei">Galileo Galilei</option>
+                            <option value="nikola_tesla">Nikola Tesla</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. What process do plants use to make food?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="photosynthesis">Photosynthesis</option>
+                            <option value="respiration">Respiration</option>
+                            <option value="fermentation">Fermentation</option>
+                            <option value="digestion">Digestion</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. What is the positively charged particle in an atom?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="proton">Proton</option>
+                            <option value="neutron">Neutron</option>
+                            <option value="electron">Electron</option>
+                            <option value="positron">Positron</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. What layer of the atmosphere contains the ozone layer?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ozone">Ozone</option>
+                            <option value="troposphere">Troposphere</option>
+                            <option value="stratosphere">Stratosphere</option>
+                            <option value="mesosphere">Mesosphere</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Who developed the theory of relativity?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="einstein">Albert Einstein</option>
+                            <option value="newton">Isaac Newton</option>
+                            <option value="galileo">Galileo Galilei</option>
+                            <option value="tesla">Nikola Tesla</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. What is the second most abundant element in the universe?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="helium">Helium</option>
+                            <option value="oxygen">Oxygen</option>
+                            <option value="carbon">Carbon</option>
+                            <option value="nitrogen">Nitrogen</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which planet is known as the Red Planet?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mars">Mars</option>
+                            <option value="venus">Venus</option>
+                            <option value="jupiter">Jupiter</option>
+                            <option value="saturn">Saturn</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. What pigment gives plants their green color?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="chlorophyll">Chlorophyll</option>
+                            <option value="carotene">Carotene</option>
+                            <option value="xanthophyll">Xanthophyll</option>
+                            <option value="anthocyanin">Anthocyanin</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. What is the unit of electric potential?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="voltage">Voltage</option>
+                            <option value="ampere">Ampere</option>
+                            <option value="watt">Watt</option>
+                            <option value="ohm">Ohm</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Who proposed the theory of evolution by natural selection?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="darwin">Charles Darwin</option>
+                            <option value="lamarck">Jean-Baptiste Lamarck</option>
+                            <option value="wallace">Alfred Russel Wallace</option>
+                            <option value="mendel">Gregor Mendel</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which dwarf planet was once considered the ninth planet of our solar system?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pluto">Pluto</option>
+                            <option value="ceres">Ceres</option>
+                            <option value="eris">Eris</option>
+                            <option value="haumea">Haumea</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. What part of the cell contains the genetic material?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="nucleus">Nucleus</option>
+                            <option value="cytoplasm">Cytoplasm</option>
+                            <option value="cell_membrane">Cell Membrane</option>
+                            <option value="ribosome">Ribosome</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded" onclick="calculateMarks()">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

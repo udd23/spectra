@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "mona_lisa",
+                "2": "vincent_van_gogh",
+                "3": "the_scream",
+                "4": "pablo_picasso",
+                "5": "the_last_supper",
+                "6": "michelangelo",
+                "7": "the_persistence_of_memory",
+                "8": "claude_monet",
+                "9": "the_starry_night",
+                "10": "frida_kahlo",
+                "11": "the_birth_of_venus",
+                "12": "rembrandt",
+                "13": "the_girl_with_a_pearl_earring",
+                "14": "gustav_klimt",
+                "15": "the_night_watch",
+                "16": "georges_seurat",
+                "17": "the_kiss",
+                "18": "henri_matisse",
+                "19": "the_creation_of_adam",
+                "20": "jackson_pollock"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Art Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Art Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Which painting is known as "La Gioconda"?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mona_lisa">Mona Lisa</option>
+                            <option value="the_last_supper">The Last Supper</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="starry_night">Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Who painted "Starry Night"?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="claude_monet">Claude Monet</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. Which painting is known for its depiction of a figure with an agonized expression against a tumultuous orange sky?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="guernica">Guernica</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_birth_of_venus">The Birth of Venus</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Who is known for co-founding the Cubist movement?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="claude_monet">Claude Monet</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Which painting depicts Jesus and his disciples at the Last Supper?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_last_supper">The Last Supper</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_birth_of_venus">The Birth of Venus</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Who painted the ceiling of the Sistine Chapel?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="michelangelo">Michelangelo</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                            <option value="raphael">Raphael</option>
+                            <option value="donatello">Donatello</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which painting features melting clocks in a desert landscape?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_birth_of_venus">The Birth of Venus</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Who is known for his series of paintings of water lilies?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="claude_monet">Claude Monet</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Which painting is known for its depiction of a swirling night sky over a small town?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_birth_of_venus">The Birth of Venus</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Who is known for her self-portraits and her depiction of Mexican culture?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="frida_kahlo">Frida Kahlo</option>
+                            <option value="georgia_okeeffe">Georgia O'Keeffe</option>
+                            <option value="mary_cassatt">Mary Cassatt</option>
+                            <option value="tamara_de_lempicka">Tamara de Lempicka</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Which painting depicts the goddess Venus emerging from the sea on a shell?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_birth_of_venus">The Birth of Venus</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Who is known for his use of light and shadow in his paintings, such as "The Night Watch"?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="rembrandt">Rembrandt</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Which painting is known for its depiction of a young girl wearing a pearl earring?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_girl_with_a_pearl_earring">The Girl with a Pearl Earring</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Who is known for his painting "The Kiss" and his use of gold leaf in his works?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="gustav_klimt">Gustav Klimt</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which painting is known for its depiction of a group of soldiers in a dramatic use of light and shadow?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_night_watch">The Night Watch</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Who is known for his pointillist technique, as seen in "A Sunday Afternoon on the Island of La Grande Jatte"?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="georges_seurat">Georges Seurat</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Which painting is known for its depiction of a couple embracing, with the use of gold leaf?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_kiss">The Kiss</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Who is known for his use of bold colors and fluid shapes, as seen in "The Dance"?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="henri_matisse">Henri Matisse</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which painting is known for its depiction of God giving life to Adam?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="the_creation_of_adam">The Creation of Adam</option>
+                            <option value="the_scream">The Scream</option>
+                            <option value="the_persistence_of_memory">The Persistence of Memory</option>
+                            <option value="the_starry_night">The Starry Night</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Who is known for his abstract expressionism and drip painting technique?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="jackson_pollock">Jackson Pollock</option>
+                            <option value="pablo_picasso">Pablo Picasso</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                            <option value="claude_monet">Claude Monet</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button> 
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

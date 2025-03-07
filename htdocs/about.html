@@ -1,0 +1,419 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   About Us - Spectra
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+  .glow-button {
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e, 0 0 40px #22c55e;
+            transform: scale(1.05);
+        }
+        .glow-button:hover i {
+            transform: scale(1.2);
+        }
+        .scroll-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+        .scroll-content {
+            display: flex;
+            animation: scroll 60s linear infinite;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        .card {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 200px;
+            margin: 0 0.5rem;
+        }
+
+  </style>
+ </head>
+ <body class="bg-black text-white">
+  <!-- Header -->
+  <header class="bg-black bg-opacity-50 shadow-md py-4 fixed top-0 left-0 w-full z-10">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+    <div class="text-2xl font-bold">
+     <span class="text-green-400">
+      Spectra
+     </span>
+    </div>
+    <nav class="space-x-6 flex items-center">
+     <a class="hover:text-green-400" href="auth.php">
+      HOME
+     </a>
+     <a class="hover:text-green-400" href="working.html">
+      HOW IT WORKS
+     </a>
+     <a class="hover:text-green-400" href="about.html">
+      ABOUT US
+     </a>
+     <a class="hover:text-green-400" href="features.html">
+      FEATURES
+     </a>
+     <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSignup()">
+      Sign Up
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto p-4">
+    <section class="bg-gradient-to-r from-white-500 to-white-300 p-8 rounded-lg shadow-lg mt-6 fade-in">
+      <h2 class="text-4xl font-bold text-green-600 mb-6 text-center">
+          About Us
+      </h2>
+      <div class="bg-black p-6 rounded-lg shadow-md">
+          <p class="mb-4 text-white">
+              Welcome to <strong>Spectra</strong>, your integral and advanced polling and data collection system. We are dedicated to providing you with the best tools and services to gather and analyze data efficiently and effectively.
+          </p>
+          <p class="mb-4 text-white">
+              Our mission is to empower organizations and individuals with the ability to make informed decisions through accurate and comprehensive data collection. We believe that data is the key to understanding and improving the world around us.
+          </p>
+          <p class="mb-4 text-white">
+              With Spectra, you can create customized polls and forms, collect responses in real-time, and analyze the data with powerful tools and visualizations. Our platform is designed to be user-friendly, secure, and scalable to meet the needs of any project, big or small.
+          </p>
+          <p class="mb-4 text-white">
+              Founded in 2020, Spectra has quickly grown to become a trusted name in the data collection industry. Our team of experts is passionate about helping you achieve your goals through innovative solutions and exceptional customer service.
+          </p>
+      </div>
+  </section>
+   <section class="bg-black p-6 rounded-lg shadow-lg mt-6 fade-in">
+    <h2 class="text-3xl font-bold mb-4 text-green-600">
+        Our Team
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+     <div class="text-center">
+      <img alt="Portrait of Uday Sapkale, CEO of Spectra, as a young professional" class="mx-auto rounded-full mb-4" height="150" src="ud.jpg" width="150"/>
+      <h2 class="text-3xl font-bold mb-4 text-white-600">
+        Uday Sapkale
+    </h2>
+      <p class="text-green-600">
+       Developer
+      </p>
+      <p class="text-white">
+        Uday Sapkale has over 20 years of experience in the tech industry and is the visionary behind Spectra. He is committed to driving innovation and excellence in all aspects of the company.
+      </p>
+     </div>
+     <div class="text-center">
+      <img alt="Portrait of Mihir Shirke, Developer at Spectra" class="mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/LKrK5Bix3wOu2_YAk2kFe26Q6Wyx7gaXTax60YuOxHc.jpg" width="150"/>
+      <h2 class="text-3xl font-bold mb-4 text-white-600">
+        Mihir Shirke
+    </h2>
+      <p class="text-green-600">
+       Developer
+      </p>
+      <p class="text-white-600">
+        Mihir Shirkeis a tech enthusiast with a passion for developing cutting-edge solutions. He leads our technical team with a focus on innovation and quality.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="bg-black p-6 rounded-lg shadow-lg mt-6 fade-in">
+    <h2 class="text-3xl font-bold mb-4 text-green-600">
+        Our Values
+    </h2>
+    <ul class="list-disc list-inside">
+     <li class="mb-2" >
+      <strong>
+       Integrity:
+      </strong>
+      We uphold the highest standards of integrity in all of our actions.
+     </li>
+     <li class="mb-2">
+      <strong>
+       Innovation:
+      </strong>
+      We are constantly seeking innovative ways to improve our services and products.
+     </li>
+     <li class="mb-2">
+      <strong>
+       Customer Focus:
+      </strong>
+      We are committed to providing exceptional customer service and support.
+     </li>
+     <li class="mb-2">
+      <strong>
+       Collaboration:
+      </strong>
+      We believe in the power of teamwork and collaboration to achieve our goals.
+     </li>
+     <li class="mb-2">
+      <strong>
+       Excellence:
+      </strong>
+      We strive for excellence in everything we do.
+     </li>
+    </ul>
+   </section>
+   <section class="bg-black p-6 rounded-lg shadow-lg mt-6 fade-in">
+    <h2 class="text-4xl font-bold mb-6 text-green-600 text-center">
+        Our History
+    </h2>
+    <p class="mb-4">
+     Spectra was founded in 2020 by a group of passionate individuals who saw the need for a more efficient and effective way to collect and analyze data. Our journey began with a simple idea: to create a platform that would make data collection easy and accessible for everyone.
+    </p>
+    <p class="mb-4">
+     Over the years, we have grown and evolved, adding new features and capabilities to our platform. Today, Spectra is used by organizations and individuals around the world to gather insights and make informed decisions.
+    </p>
+    <p class="mb-4">
+     Our commitment to innovation and excellence has been the driving force behind our success. We are proud of what we have achieved and are excited about the future as we continue to push the boundaries of what is possible in the world of data collection.
+    </p>
+     <!-- Video Demo Section -->
+   <section class="py-20 bg-black text-center text-white px-6" id="demo">
+    <div class="container mx-auto max-w-4xl">
+
+     <video class="w-full rounded-lg shadow-lg" controls="">
+      <source src="history.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+     </video>
+    </div>
+   </section>
+  </main>
+   </section>
+   <section class="bg-black py-12" id="highlights">
+    <h2 class="text-4xl font-bold mb-6 text-green-600 text-center">
+        Why Choose Spectra?
+    </h2>
+    <div class="relative">
+        <div class="scroll-container space-x-4 px-4">
+            <div class="scroll-content">
+                <div class="card glow-button">
+                    <i class="fas fa-brain text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Smart Insights</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-shield-alt text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Data Security</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-mobile-alt text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Cross-Platform</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-expand text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Flexible Solutions</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-chart-line text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Detailed Reports</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-users text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Easy Interface</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-cogs text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Seamless Integration</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-clock text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Instant Updates</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-database text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Data Management</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-bullhorn text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Effective Communication</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-chart-pie text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Comprehensive Analytics</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-user-shield text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">User Privacy</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-sync-alt text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Continuous Updates</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-rocket text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">High Performance</h3>
+                </div>
+                <!-- Duplicate cards to create a seamless loop -->
+                <div class="card glow-button">
+                    <i class="fas fa-brain text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Smart Insights</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-shield-alt text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Data Security</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-mobile-alt text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Cross-Platform</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-expand text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Flexible Solutions</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-chart-line text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Detailed Reports</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-users text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Easy Interface</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-cogs text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Seamless Integration</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-clock text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Instant Updates</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-database text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Data Management</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-bullhorn text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Effective Communication</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-chart-pie text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Comprehensive Analytics</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-user-shield text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">User Privacy</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-sync-alt text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">Continuous Updates</h3>
+                </div>
+                <div class="card glow-button">
+                    <i class="fas fa-rocket text-3xl text-green-600 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-1">High Performance</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  </main>
+  <!-- Footer -->
+  <footer class="py-20 bg-black text-gray-400">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+     <div>
+         <div class="text-2xl font-bold text-teal-400">
+       SPECTRA.
+      </div>
+      <p class="mt-4">
+      Integral And Advance Polling and Data Collection Form System.
+      </p>
+      <p class="mt-4">
+       Phone:1234567890
+      </p>
+      <p>
+       Email: spectra@gmail.com
+      </p>
+     </div>
+     <div>
+      <h3 class="text-xl font-bold">
+       QUICK LINKS
+      </h3>
+      <ul class="mt-4 space-y-2">
+       <li>
+        <a class="hover:text-teal-400" href="auth.php">
+         Home
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="about.html">
+         About
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="features.html">
+         Services
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="working.html">
+         Work
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="#">
+         Blog
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="contact.html">
+         Contact
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h3 class="text-xl font-bold">
+       MORE
+      </h3>
+      <ul class="mt-4 space-y-2">
+       <li>
+        <a class="hover:text-teal-400" href="#">
+         Privacy Policy
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="#">
+         Terms of Service
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-teal-400" href="#">
+         FAQ
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h3 class="text-xl font-bold">
+       SIGNUP A NEWSLETTER
+      </h3>
+      <form class="mt-4">
+       <input class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Your Email" type="email"/>
+       <button class="mt-4 w-full bg-teal-400 text-black px-4 py-2 rounded">
+        Submit
+       </button>
+      </form>
+     </div>
+    </div>
+    <div class="mt-12 text-center text-gray-600">
+     © 2021 SPECTRA. All rights reserved. Designed by 
+     <a class="text-teal-400">
+      Uday Sapkale
+     </a>
+    </div>
+ </body>
+ </html>
+ </body>
+</html>

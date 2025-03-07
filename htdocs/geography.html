@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "asia",
+                "2": "nile",
+                "3": "everest",
+                "4": "pacific",
+                "5": "russia",
+                "6": "sahara",
+                "7": "amazon",
+                "8": "vatican",
+                "9": "africa",
+                "10": "canada",
+                "11": "australia",
+                "12": "greenland",
+                "13": "k2",
+                "14": "lake_baikal",
+                "15": "antarctica",
+                "16": "ganges",
+                "17": "tokyo",
+                "18": "brazil",
+                "19": "madagascar",
+                "20": "great_barrier_reef"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Geography Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Geography Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Which is the largest continent by area?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="asia">Asia</option>
+                            <option value="africa">Africa</option>
+                            <option value="north_america">North America</option>
+                            <option value="europe">Europe</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. What is the longest river in the world?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="nile">Nile</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="yangtze">Yangtze</option>
+                            <option value="mississippi">Mississippi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. What is the highest mountain in the world?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="everest">Mount Everest</option>
+                            <option value="k2">K2</option>
+                            <option value="kangchenjunga">Kangchenjunga</option>
+                            <option value="lhotse">Lhotse</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Which is the largest ocean on Earth?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pacific">Pacific Ocean</option>
+                            <option value="atlantic">Atlantic Ocean</option>
+                            <option value="indian">Indian Ocean</option>
+                            <option value="southern">Southern Ocean</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Which country has the largest land area?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="russia">Russia</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="united_states">United States</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. What is the largest desert in the world?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="sahara">Sahara Desert</option>
+                            <option value="arabian">Arabian Desert</option>
+                            <option value="gobi">Gobi Desert</option>
+                            <option value="kalahari">Kalahari Desert</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which is the largest rainforest in the world?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="amazon">Amazon Rainforest</option>
+                            <option value="congo">Congo Rainforest</option>
+                            <option value="southeast_asian">Southeast Asian Rainforest</option>
+                            <option value="australian">Australian Rainforest</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. What is the smallest country in the world by area?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="vatican">Vatican City</option>
+                            <option value="monaco">Monaco</option>
+                            <option value="nauru">Nauru</option>
+                            <option value="tuvalu">Tuvalu</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Which continent is known as the "Dark Continent"?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="south_america">South America</option>
+                            <option value="australia">Australia</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Which country has the longest coastline?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="canada">Canada</option>
+                            <option value="indonesia">Indonesia</option>
+                            <option value="russia">Russia</option>
+                            <option value="philippines">Philippines</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Which country is both a continent and a country?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="australia">Australia</option>
+                            <option value="greenland">Greenland</option>
+                            <option value="iceland">Iceland</option>
+                            <option value="new_zealand">New Zealand</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. What is the largest island in the world?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="greenland">Greenland</option>
+                            <option value="new_guinea">New Guinea</option>
+                            <option value="borneo">Borneo</option>
+                            <option value="madagascar">Madagascar</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. What is the second highest mountain in the world?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="k2">K2</option>
+                            <option value="kangchenjunga">Kangchenjunga</option>
+                            <option value="lhotse">Lhotse</option>
+                            <option value="makalu">Makalu</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Which is the deepest lake in the world?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="lake_baikal">Lake Baikal</option>
+                            <option value="lake_tanganyika">Lake Tanganyika</option>
+                            <option value="caspian_sea">Caspian Sea</option>
+                            <option value="lake_vostok">Lake Vostok</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which continent is the coldest?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="antarctica">Antarctica</option>
+                            <option value="europe">Europe</option>
+                            <option value="north_america">North America</option>
+                            <option value="asia">Asia</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Which river is considered the holiest in India?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ganges">Ganges</option>
+                            <option value="yamuna">Yamuna</option>
+                            <option value="brahmaputra">Brahmaputra</option>
+                            <option value="godavari">Godavari</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. What is the most populous city in the world?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="tokyo">Tokyo</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="shanghai">Shanghai</option>
+                            <option value="sao_paulo">São Paulo</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Which country is the largest producer of coffee?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="brazil">Brazil</option>
+                            <option value="vietnam">Vietnam</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="indonesia">Indonesia</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which island is known as the "Red Island"?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="madagascar">Madagascar</option>
+                            <option value="borneo">Borneo</option>
+                            <option value="new_guinea">New Guinea</option>
+                            <option value="iceland">Iceland</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. What is the largest coral reef system in the world?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="great_barrier_reef">Great Barrier Reef</option>
+                            <option value="belize_barrier_reef">Belize Barrier Reef</option>
+                            <option value="new_caledonia_barrier_reef">New Caledonia Barrier Reef</option>
+                            <option value="florida_keys_reef">Florida Keys Reef</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

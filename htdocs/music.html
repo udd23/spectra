@@ -1,0 +1,330 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "beatles",
+                "2": "michael_jackson",
+                "3": "elvis_presley",
+                "4": "madonna",
+                "5": "queen",
+                "6": "bob_dylan",
+                "7": "rolling_stones",
+                "8": "led_zeppelin",
+                "9": "nirvana",
+                "10": "pink_floyd",
+                "11": "beyonce",
+                "12": "taylor_swift",
+                "13": "eminem",
+                "14": "adele",
+                "15": "bruce_springsteen",
+                "16": "u2",
+                "17": "prince",
+                "18": "whitney_houston",
+                "19": "elton_john",
+                "20": "david_bowie"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Music Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Music Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Which band is known as the "Fab Four"?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="beatles">The Beatles</option>
+                            <option value="rolling_stones">The Rolling Stones</option>
+                            <option value="led_zeppelin">Led Zeppelin</option>
+                            <option value="the_who">The Who</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Who is known as the "King of Pop"?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="michael_jackson">Michael Jackson</option>
+                            <option value="elvis_presley">Elvis Presley</option>
+                            <option value="prince">Prince</option>
+                            <option value="justin_timberlake">Justin Timberlake</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. Who is known as the "King of Rock and Roll"?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="elvis_presley">Elvis Presley</option>
+                            <option value="chuck_berry">Chuck Berry</option>
+                            <option value="little_richard">Little Richard</option>
+                            <option value="jerry_lee_lewis">Jerry Lee Lewis</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Who is known as the "Queen of Pop"?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="madonna">Madonna</option>
+                            <option value="whitney_houston">Whitney Houston</option>
+                            <option value="beyonce">Beyoncé</option>
+                            <option value="lady_gaga">Lady Gaga</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Which band is known for the song "Bohemian Rhapsody"?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="queen">Queen</option>
+                            <option value="the_beatles">The Beatles</option>
+                            <option value="led_zeppelin">Led Zeppelin</option>
+                            <option value="pink_floyd">Pink Floyd</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Who is known for the song "Like a Rolling Stone"?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="bob_dylan">Bob Dylan</option>
+                            <option value="the_rolling_stones">The Rolling Stones</option>
+                            <option value="neil_young">Neil Young</option>
+                            <option value="bruce_springsteen">Bruce Springsteen</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which band is known for the song "Paint It Black"?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="rolling_stones">The Rolling Stones</option>
+                            <option value="the_beatles">The Beatles</option>
+                            <option value="led_zeppelin">Led Zeppelin</option>
+                            <option value="the_who">The Who</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Which band is known for the song "Stairway to Heaven"?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="led_zeppelin">Led Zeppelin</option>
+                            <option value="pink_floyd">Pink Floyd</option>
+                            <option value="the_rolling_stones">The Rolling Stones</option>
+                            <option value="the_who">The Who</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Which band is known for the song "Smells Like Teen Spirit"?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="nirvana">Nirvana</option>
+                            <option value="pearl_jam">Pearl Jam</option>
+                            <option value="soundgarden">Soundgarden</option>
+                            <option value="alice_in_chains">Alice in Chains</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Which band is known for the album "The Dark Side of the Moon"?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pink_floyd">Pink Floyd</option>
+                            <option value="led_zeppelin">Led Zeppelin</option>
+                            <option value="the_rolling_stones">The Rolling Stones</option>
+                            <option value="the_who">The Who</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Who is known for the song "Single Ladies (Put a Ring on It)"?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="beyonce">Beyoncé</option>
+                            <option value="rihanna">Rihanna</option>
+                            <option value="lady_gaga">Lady Gaga</option>
+                            <option value="katy_perry">Katy Perry</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Who is known for the song "Shake It Off"?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="taylor_swift">Taylor Swift</option>
+                            <option value="katy_perry">Katy Perry</option>
+                            <option value="ariana_grande">Ariana Grande</option>
+                            <option value="selena_gomez">Selena Gomez</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Who is known for the song "Lose Yourself"?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="eminem">Eminem</option>
+                            <option value="jay_z">Jay-Z</option>
+                            <option value="kanye_west">Kanye West</option>
+                            <option value="dr_dre">Dr. Dre</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Who is known for the song "Rolling in the Deep"?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="adele">Adele</option>
+                            <option value="amy_winehouse">Amy Winehouse</option>
+                            <option value="lana_del_rey">Lana Del Rey</option>
+                            <option value="florence_and_the_machine">Florence and the Machine</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Who is known for the song "Born to Run"?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="bruce_springsteen">Bruce Springsteen</option>
+                            <option value="bob_dylan">Bob Dylan</option>
+                            <option value="tom_petty">Tom Petty</option>
+                            <option value="john_mellencamp">John Mellencamp</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Which band is known for the song "With or Without You"?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="u2">U2</option>
+                            <option value="coldplay">Coldplay</option>
+                            <option value="the_police">The Police</option>
+                            <option value="depeche_mode">Depeche Mode</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Who is known for the song "Purple Rain"?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="prince">Prince</option>
+                            <option value="michael_jackson">Michael Jackson</option>
+                            <option value="david_bowie">David Bowie</option>
+                            <option value="elton_john">Elton John</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Who is known for the song "I Will Always Love You"?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="whitney_houston">Whitney Houston</option>
+                            <option value="celine_dion">Celine Dion</option>
+                            <option value="mariah_carey">Mariah Carey</option>
+                            <option value="barbra_streisand">Barbra Streisand</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Who is known for the song "Rocket Man"?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="elton_john">Elton John</option>
+                            <option value="david_bowie">David Bowie</option>
+                            <option value="billy_joel">Billy Joel</option>
+                            <option value="paul_mccartney">Paul McCartney</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Who is known for the song "Space Oddity"?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="david_bowie">David Bowie</option>
+                            <option value="elton_john">Elton John</option>
+                            <option value="billy_joel">Billy Joel</option>
+                            <option value="paul_mccartney">Paul McCartney</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+                   

@@ -1,0 +1,329 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "1945",
+                "2": "alexander_the_great",
+                "3": "pyramids_of_giza",
+                "4": "julius_caesar",
+                "5": "industrial_revolution",
+                "6": "marco_polo",
+                "7": "leonardo_da_vinci",
+                "8": "roman_empire",
+                "9": "magna_carta",
+                "10": "christopher_columbus",
+                "11": "french_revolution",
+                "12": "abraham_lincoln",
+                "13": "great_wall_of_china",
+                "14": "world_war_ii",
+                "15": "nelson_mandela",
+                "16": "mahatma_gandhi",
+                "17": "apollo_11",
+                "18": "cold_war",
+                "19": "berlin_wall",
+                "20": "ottoman_empire"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- History Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">History Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. In which year did World War II end?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="1945">1945</option>
+                            <option value="1939">1939</option>
+                            <option value="1941">1941</option>
+                            <option value="1944">1944</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Who was known as the 'Great Conqueror'?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="alexander_the_great">Alexander the Great</option>
+                            <option value="genghis_khan">Genghis Khan</option>
+                            <option value="napoleon">Napoleon</option>
+                            <option value="julius_caesar">Julius Caesar</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. What is the name of the ancient Egyptian structures that are one of the Seven Wonders of the World?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="pyramids_of_giza">Pyramids of Giza</option>
+                            <option value="hanging_gardens">Hanging Gardens</option>
+                            <option value="colossus_of_rhodes">Colossus of Rhodes</option>
+                            <option value="temple_of_artemis">Temple of Artemis</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Who was assassinated on the Ides of March in 44 BC?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="julius_caesar">Julius Caesar</option>
+                            <option value="alexander_the_great">Alexander the Great</option>
+                            <option value="cleopatra">Cleopatra</option>
+                            <option value="nero">Nero</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. What was the period of rapid industrial growth during the 18th and 19th centuries called?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="industrial_revolution">Industrial Revolution</option>
+                            <option value="renaissance">Renaissance</option>
+                            <option value="age_of_enlightenment">Age of Enlightenment</option>
+                            <option value="medieval_period">Medieval Period</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Who was the famous Venetian merchant and explorer who traveled to Asia in the 13th century?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="marco_polo">Marco Polo</option>
+                            <option value="christopher_columbus">Christopher Columbus</option>
+                            <option value="vasco_da_gama">Vasco da Gama</option>
+                            <option value="ferdinand_magellan">Ferdinand Magellan</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Who painted the Mona Lisa?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="leonardo_da_vinci">Leonardo da Vinci</option>
+                            <option value="michelangelo">Michelangelo</option>
+                            <option value="raphael">Raphael</option>
+                            <option value="vincent_van_gogh">Vincent van Gogh</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Which ancient civilization was centered around the city of Rome?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="roman_empire">Roman Empire</option>
+                            <option value="greek_empire">Greek Empire</option>
+                            <option value="egyptian_empire">Egyptian Empire</option>
+                            <option value="persian_empire">Persian Empire</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. What document, signed in 1215, limited the powers of the English king?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="magna_carta">Magna Carta</option>
+                            <option value="bill_of_rights">Bill of Rights</option>
+                            <option value="constitution">Constitution</option>
+                            <option value="declaration_of_independence">Declaration of Independence</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Who is credited with discovering the Americas in 1492?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="christopher_columbus">Christopher Columbus</option>
+                            <option value="leif_erikson">Leif Erikson</option>
+                            <option value="amerigo_vespucci">Amerigo Vespucci</option>
+                            <option value="ferdinand_magellan">Ferdinand Magellan</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. What major event began in France in 1789?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="french_revolution">French Revolution</option>
+                            <option value="american_revolution">American Revolution</option>
+                            <option value="industrial_revolution">Industrial Revolution</option>
+                            <option value="russian_revolution">Russian Revolution</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Who was the 16th President of the United States?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="abraham_lincoln">Abraham Lincoln</option>
+                            <option value="george_washington">George Washington</option>
+                            <option value="thomas_jefferson">Thomas Jefferson</option>
+                            <option value="theodore_roosevelt">Theodore Roosevelt</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. What is the name of the ancient Chinese structure built to protect against invasions?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="great_wall_of_china">Great Wall of China</option>
+                            <option value="terracotta_army">Terracotta Army</option>
+                            <option value="forbidden_city">Forbidden City</option>
+                            <option value="silk_road">Silk Road</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Which global conflict was fought from 1939 to 1945?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="world_war_ii">World War II</option>
+                            <option value="world_war_i">World War I</option>
+                            <option value="korean_war">Korean War</option>
+                            <option value="vietnam_war">Vietnam War</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Who was the first black president of South Africa?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="nelson_mandela">Nelson Mandela</option>
+                            <option value="desmond_tutu">Desmond Tutu</option>
+                            <option value="thabo_mbeki">Thabo Mbeki</option>
+                            <option value="jacob_zuma">Jacob Zuma</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Who led the Indian independence movement against British rule?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="mahatma_gandhi">Mahatma Gandhi</option>
+                            <option value="jawaharlal_nehru">Jawaharlal Nehru</option>
+                            <option value="subhas_chandra_bose">Subhas Chandra Bose</option>
+                            <option value="bhagat_singh">Bhagat Singh</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. What was the name of the first manned mission to land on the moon?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="apollo_11">Apollo 11</option>
+                            <option value="apollo_13">Apollo 13</option>
+                            <option value="gemini_8">Gemini 8</option>
+                            <option value="mercury_6">Mercury 6</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. What was the period of geopolitical tension between the Soviet Union and the United States called?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="cold_war">Cold War</option>
+                            <option value="world_war_ii">World War II</option>
+                            <option value="korean_war">Korean War</option>
+                            <option value="vietnam_war">Vietnam War</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. What was the name of the barrier that divided East and West Berlin from 1961 to 1989?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="berlin_wall">Berlin Wall</option>
+                            <option value="iron_curtain">Iron Curtain</option>
+                            <option value="great_wall_of_china">Great Wall of China</option>
+                            <option value="maginot_line">Maginot Line</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Which empire lasted from 1299 to 1922?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ottoman_empire">Ottoman Empire</option>
+                            <option value="roman_empire">Roman Empire</option>
+                            <option value="byzantine_empire">Byzantine Empire</option>
+                            <option value="mongol_empire">Mongol Empire</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

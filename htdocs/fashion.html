@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral And Advance Polling and Data Collection Form System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <script>
+        function changeFormTheme(theme) {
+            const formContainer = document.getElementById('form-container');
+            formContainer.className = theme + ' p-6 rounded-lg shadow-lg w-full max-w-2xl';
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font;
+        }
+
+        function calculateMarks() {
+            const correctAnswers = {
+                "1": "coco_chanel",
+                "2": "louis_vuitton",
+                "3": "gucci",
+                "4": "prada",
+                "5": "hermes",
+                "6": "versace",
+                "7": "ralph_lauren",
+                "8": "giorgio_armani",
+                "9": "dior",
+                "10": "valentino",
+                "11": "burberry",
+                "12": "tom_ford",
+                "13": "alexander_mcqueen",
+                "14": "givenchy",
+                "15": "stella_mccartney",
+                "16": "balenciaga",
+                "17": "saint_laurent",
+                "18": "fendi",
+                "19": "michael_kors",
+                "20": "chloe"
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 20; i++) {
+                const answer = document.querySelector(`select[name="question${i}"]`).value;
+                if (answer === correctAnswers[i.toString()]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is: ${score} out of 20`);
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-start mb-4">
+            <a href="javascript:history.back()" class="text-gray-800 text-2xl">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Integral And Advance Polling and Data Collection Form System</h1>
+        <div class="flex justify-center mb-8">
+            <div class="mr-4">
+                <label for="form-theme" class="block text-gray-800 mb-2">Select Form Theme:</label>
+                <select id="form-theme" class="p-2 rounded text-gray-800" onchange="changeFormTheme(this.value)">
+                    <option value="bg-white text-black">Default</option>
+                    <option value="bg-gray-800 text-white">Dark</option>
+                    <option value="bg-blue-500 text-white">Blue</option>
+                    <option value="bg-green-500 text-white">Green</option>
+                    <option value="bg-red-500 text-white">Red</option>
+                    <option value="bg-gray-900 text-white">Gray</option>
+                    <option value="bg-yellow-500 text-white">Yellow</option>
+                    <option value="bg-orange-500 text-white">Orange</option>
+                    <option value="bg-violet-500 text-white">Violet</option>
+                </select>
+            </div>
+            <div>
+                <label for="font" class="block text-gray-800 mb-2">Select Font:</label>
+                <select id="font" class="p-2 rounded text-gray-800" onchange="changeFont(this.value)">
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Nunito', sans-serif">Nunito</option>
+                    <option value="'Raleway', sans-serif">Raleway</option>
+                    <option value="'Merriweather', sans-serif">Merriweather</option>
+                    <option value="'Playfair Display', serif">Playfair Display</option>
+                    <option value="'Great Vibes', cursive">Great Vibes</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Dancing Script', cursive">Dancing Script</option>
+                    <option value="'New Times Roman', sans-serif">New Times Roman</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <!-- Fashion Quiz Template -->
+            <div id="form-container" class="bg-white text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+                <h2 class="text-xl font-bold mb-4">Fashion Quiz</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Name:</label>
+                        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Email:</label>
+                        <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">1. Who is the founder of the fashion brand Chanel?</label>
+                        <select name="question1" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="coco_chanel">Coco Chanel</option>
+                            <option value="christian_dior">Christian Dior</option>
+                            <option value="gianni_versace">Gianni Versace</option>
+                            <option value="ralph_lauren">Ralph Lauren</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">2. Which brand is known for its iconic monogrammed handbags and luggage?</label>
+                        <select name="question2" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="louis_vuitton">Louis Vuitton</option>
+                            <option value="gucci">Gucci</option>
+                            <option value="prada">Prada</option>
+                            <option value="hermes">Hermès</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">3. Which Italian fashion house is known for its double G logo?</label>
+                        <select name="question3" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="gucci">Gucci</option>
+                            <option value="versace">Versace</option>
+                            <option value="prada">Prada</option>
+                            <option value="dolce_and_gabbana">Dolce & Gabbana</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">4. Which brand is known for its triangle logo and luxury leather goods?</label>
+                        <select name="question4" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="prada">Prada</option>
+                            <option value="gucci">Gucci</option>
+                            <option value="fendi">Fendi</option>
+                            <option value="hermes">Hermès</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">5. Which French luxury brand is known for its Birkin and Kelly bags?</label>
+                        <select name="question5" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="hermes">Hermès</option>
+                            <option value="chanel">Chanel</option>
+                            <option value="louis_vuitton">Louis Vuitton</option>
+                            <option value="dior">Dior</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">6. Which brand is known for its Medusa logo and bold prints?</label>
+                        <select name="question6" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="versace">Versace</option>
+                            <option value="gucci">Gucci</option>
+                            <option value="dolce_and_gabbana">Dolce & Gabbana</option>
+                            <option value="fendi">Fendi</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">7. Which American designer is known for his polo shirts and preppy style?</label>
+                        <select name="question7" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="ralph_lauren">Ralph Lauren</option>
+                            <option value="tommy_hilfiger">Tommy Hilfiger</option>
+                            <option value="calvin_klein">Calvin Klein</option>
+                            <option value="michael_kors">Michael Kors</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">8. Which Italian designer is known for his clean, tailored lines and sophisticated style?</label>
+                        <select name="question8" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="giorgio_armani">Giorgio Armani</option>
+                            <option value="valentino">Valentino</option>
+                            <option value="dolce_and_gabbana">Dolce & Gabbana</option>
+                            <option value="versace">Versace</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">9. Which French fashion house is known for its "New Look" introduced in 1947?</label>
+                        <select name="question9" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="dior">Dior</option>
+                            <option value="chanel">Chanel</option>
+                            <option value="givenchy">Givenchy</option>
+                            <option value="balenciaga">Balenciaga</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">10. Which Italian designer is known for his romantic and feminine designs, often featuring ruffles and lace?</label>
+                        <select name="question10" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="valentino">Valentino</option>
+                            <option value="dolce_and_gabbana">Dolce & Gabbana</option>
+                            <option value="versace">Versace</option>
+                            <option value="prada">Prada</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">11. Which British brand is known for its trench coats and check pattern?</label>
+                        <select name="question11" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="burberry">Burberry</option>
+                            <option value="vivienne_westwood">Vivienne Westwood</option>
+                            <option value="alexander_mcqueen">Alexander McQueen</option>
+                            <option value="stella_mccartney">Stella McCartney</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">12. Which American designer is known for his work at Gucci and his own eponymous brand?</label>
+                        <select name="question12" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="tom_ford">Tom Ford</option>
+                            <option value="ralph_lauren">Ralph Lauren</option>
+                            <option value="calvin_klein">Calvin Klein</option>
+                            <option value="michael_kors">Michael Kors</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">13. Which British designer is known for his dramatic and avant-garde designs, often featuring skull motifs?</label>
+                        <select name="question13" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="alexander_mcqueen">Alexander McQueen</option>
+                            <option value="vivienne_westwood">Vivienne Westwood</option>
+                            <option value="stella_mccartney">Stella McCartney</option>
+                            <option value="john_galliano">John Galliano</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">14. Which French fashion house is known for its elegant and timeless designs, often worn by Audrey Hepburn?</label>
+                        <select name="question14" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="givenchy">Givenchy</option>
+                            <option value="chanel">Chanel</option>
+                            <option value="dior">Dior</option>
+                            <option value="balenciaga">Balenciaga</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">15. Which British designer is known for her sustainable and ethical fashion practices?</label>
+                        <select name="question15" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="stella_mccartney">Stella McCartney</option>
+                            <option value="vivienne_westwood">Vivienne Westwood</option>
+                            <option value="alexander_mcqueen">Alexander McQueen</option>
+                            <option value="john_galliano">John Galliano</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">16. Which Spanish fashion house is known for its innovative and sculptural designs?</label>
+                        <select name="question16" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="balenciaga">Balenciaga</option>
+                            <option value="dior">Dior</option>
+                            <option value="givenchy">Givenchy</option>
+                            <option value="valentino">Valentino</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">17. Which French fashion house is known for its sleek and modern designs, often featuring leather and metal accents?</label>
+                        <select name="question17" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="saint_laurent">Saint Laurent</option>
+                            <option value="chanel">Chanel</option>
+                            <option value="dior">Dior</option>
+                            <option value="givenchy">Givenchy</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">18. Which Italian fashion house is known for its double F logo and luxury leather goods?</label>
+                        <select name="question18" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="fendi">Fendi</option>
+                            <option value="gucci">Gucci</option>
+                            <option value="prada">Prada</option>
+                            <option value="versace">Versace</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">19. Which American designer is known for his accessible luxury fashion and handbags?</label>
+                        <select name="question19" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="michael_kors">Michael Kors</option>
+                            <option value="ralph_lauren">Ralph Lauren</option>
+                            <option value="tom_ford">Tom Ford</option>
+                            <option value="calvin_klein">Calvin Klein</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">20. Which French fashion house is known for its romantic and bohemian designs, often featuring flowing fabrics and soft colors?</label>
+                        <select name="question20" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select an answer</option>
+                            <option value="chloe">Chloé</option>
+                            <option value="dior">Dior</option>
+                            <option value="givenchy">Givenchy</option>
+                            <option value="valentino">Valentino</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="button" onclick="calculateMarks()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            <i class="fas fa-share"></i> Share
+                        </button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
